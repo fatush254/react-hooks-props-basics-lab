@@ -1,14 +1,17 @@
 import React from "react";
-import Links from "./links";
+import user from "../data/user";
+import Links from "./Links";
 
-function About(props) {
+function About() {
+  
   return (
     <div id="about">
       <h2>About Me</h2>
-      {props.bio && <p>{props.bio}</p>}
+      {user.bio ? <About bio="I made this" links={user.links} /> : <About bio="" links={user.links} />}
       <img src="https://i.imgur.com/mV8PQxj.gif" alt="I made this" />
-      {props.github && props.linkedin && <Links github={props.github} linkedin={props.linkedin} />}
+      <Links />
     </div>
+   
   );
 }
 
